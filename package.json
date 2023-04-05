@@ -9,11 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "rc-slider": "^10.1.1",
     "react": "^18.2.0",
+    "react-avatar-editor": "^13.0.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
+    "@types/react-avatar-editor": "^13.0.0",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",

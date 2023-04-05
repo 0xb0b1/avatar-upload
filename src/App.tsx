@@ -1,9 +1,10 @@
+import { AvatarUpload } from './components/Input/AvatarUpload'
+import 'rc-slider/assets/index.css'
+
 function App() {
   return (
-    <div className='bg-gray-100 h-screen'>
-      <p className='text-gray-800'>
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className='max-w-screen-md m-auto mt-24 mb-24 bg-white border-2 border-gray-100 '>
+      <AvatarUpload />
     </div>
   )
 }
