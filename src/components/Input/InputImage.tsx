@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface FileChangeType {
   handleFileChange: (event: any) => void
   image: string
