@@ -1,4 +1,3 @@
-import React from 'react'
 import { useImage } from '../../contexts/ImageContext'
 
 export const UploadError = () => {

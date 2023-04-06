@@ -10,15 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.0.1",
     "rc-slider": "^10.1.1",
     "react": "^18.2.0",
     "react-avatar-editor": "^13.0.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.43.9",
     "ts-jest": "^29.1.0",
-    "ts-node": "^10.9.1",
-    "zod": "^3.21.4"
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^9.2.0",

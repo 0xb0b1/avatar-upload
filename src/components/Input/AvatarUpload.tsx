@@ -2,8 +2,10 @@ import { Crop } from './Crop'
 import { InputImage } from './InputImage'
 import { UploadError } from './UploadError'
 
-import 'rc-slider/assets/index.css'
 import { useImage } from '../../contexts/ImageContext'
+
+import 'rc-slider/assets/index.css'
+
 export const AvatarUpload = () => {
   const { imageState } = useImage()
 

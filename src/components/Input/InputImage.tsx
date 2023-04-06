@@ -1,29 +1,13 @@
 import AvatarEditor from 'react-avatar-editor'
 import { useImage } from '../../contexts/ImageContext'
 
-import * as z from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-
-const ImageUploadSchema = z.object({
-  file: z.object({
-    size: z.number(),
-    type: z.string().regex(/^image\/(jpeg|gif|png)$/),
-  }),
-})
-
 export const InputImage = () => {
   const { image, imageZoom, handleFileChange } = useImage()
-
-  const {
-    register,
-    formState: { isValid },
-  } = useForm({ resolver: zodResolver(ImageUploadSchema) })
 
   const justifyWithImage = !image ? 'justify-center' : ''
 
   return (
-    <div className='bg-gray-100 relative border-2 border-dashed border-dotted-border-color rounded-md pl-8 py-4 h-[177px]'>
+    <div className='bg-gray-100 relative border-2 border-dashed border-dotted-border-color rounded-md p-8 py-4 h-[177px]'>
       <input
         type='file'
         data-testid='upload-avatar'
