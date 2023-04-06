@@ -1,32 +1,23 @@
-import { useState } from 'react'
 import { Crop } from './Crop'
 import { InputImage } from './InputImage'
 import { UploadError } from './UploadError'
 
+import 'rc-slider/assets/index.css'
+import { useImage } from '../../contexts/ImageContext'
 export const AvatarUpload = () => {
-  const [image, setImage] = useState('')
-  const [imageState, setImageState] = useState('initial')
-
-  const handleFileChange = (event: any) => {
-    try {
-      const selectedImage = event.target.files[0]
-
-      setImageState('crop')
-      setImage(URL.createObjectURL(selectedImage))
-    } catch {
-      setImageState('error')
-    }
-  }
+  const { imageState } = useImage()
 
   const ImageStateComponents: any = {
-    initial: <InputImage handleFileChange={handleFileChange} image={image} />,
-    crop: (
-      <Crop image={image} setImageState={setImageState} setImage={setImage} />
-    ),
+    initial: <InputImage />,
+    crop: <Crop />,
     error: <UploadError />,
   }
 
   return (
-    <div className='bg-gray-100 m-24'>{ImageStateComponents[imageState]}</div>
+    <div className='max-w-screen-md m-auto'>
+      <div className='rounded-xl m-24 flex flex-col gap-4'>
+        {ImageStateComponents[imageState]}
+      </div>
+    </div>
   )
 }

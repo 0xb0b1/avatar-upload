@@ -1,11 +1,13 @@
 import { AvatarUpload } from './components/Input/AvatarUpload'
-import 'rc-slider/assets/index.css'
+import { ImageProvider } from './contexts/ImageContext'
 
 function App() {
   return (
-    <div className='max-w-screen-md m-auto mt-24 mb-24 bg-white border-2 border-gray-100 '>
-      <AvatarUpload />
-    </div>
+    <ImageProvider>
+      <div className='m-auto mt-12 mb-12 pt-4 pb-4  rounded-xl'>
+        <AvatarUpload />
+      </div>
+    </ImageProvider>
   )
 }
 

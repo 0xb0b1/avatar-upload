@@ -1,36 +1,62 @@
+import AvatarEditor from 'react-avatar-editor'
+import { useImage } from '../../contexts/ImageContext'
+
 interface FileChangeType {
-  handleFileChange: (event: any) => void
-  image: string
+  handleFileChange?: (event: any) => void
+  image?: string
+  imageZoom?: number
 }
 
-export const InputImage = ({ handleFileChange, image }: FileChangeType) => {
+export const InputImage = () => {
+  const { image, imageZoom, handleFileChange } = useImage()
+
+  const justifyWithImage = !image ? 'justify-center' : ''
+
   return (
-    <div className='relative border-2 border-dashed border-gray-300 rounded-md p-4'>
+    <div className='bg-gray-100 relative border-2 border-dashed border-dotted-border-color rounded-md pl-8 py-4 h-[177px]'>
       <input
         type='file'
+        data-testid='upload-avatar'
         className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
         draggable='true'
         accept='image/*'
         onChange={handleFileChange}
       />
-      <div className='flex gap-8 items-center justify-center text-center h-32'>
+      <div
+        className={`flex gap-8 items-center ${justifyWithImage} text-center h-32`}
+      >
         {image ? (
-          <img className='rounded-full w-24 h-24' src={image} alt='text' />
+          <div className='h-28 w-28 rounded-full bg-red-500 flex items-center justify-center'>
+            <AvatarEditor
+              className='bg-white'
+              color={[241, 245, 249, 1]}
+              image={image}
+              scale={imageZoom}
+              borderRadius={100}
+              width={110}
+              height={110}
+            />{' '}
+          </div>
         ) : null}
 
         <div className=''>
           <div className='flex justify-center items-center gap-2'>
             <svg
+              width='22'
+              height='22'
+              viewBox='0 0 16 13'
+              fill='none'
               xmlns='http://www.w3.org/2000/svg'
-              width='20'
-              height='20'
-              fill='#000000'
-              viewBox='0 0 256 256'
             >
-              <path d='M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z'></path>
+              <path
+                fillRule='evenodd'
+                clipRule='evenodd'
+                d='M11.99 5.99002C12.54 5.99002 12.99 5.54002 12.99 4.99002C12.99 4.44002 12.54 3.99002 11.99 3.99002C11.44 3.99002 10.99 4.44002 10.99 4.99002C10.99 5.54002 11.44 5.99002 11.99 5.99002ZM14.99 0.990021H0.990036C0.440036 0.990021 -0.00996399 1.44002 -0.00996399 1.99002V11.99C-0.00996399 12.54 0.440036 12.99 0.990036 12.99H14.99C15.54 12.99 15.99 12.54 15.99 11.99V1.99002C15.99 1.44002 15.54 0.990021 14.99 0.990021ZM13.99 9.99002L8.99004 6.99002L7.99004 8.99002L4.99004 4.99002L1.99004 9.99002V2.99002H13.99V9.99002Z'
+                fill='#495567'
+              />
             </svg>
 
-            <p className='text-gray-600 font-medium'>Organization Logo</p>
+            <p className='text-title-color font-medium'>Organization Logo</p>
           </div>
           <p className='mt-1 text-md text-gray-500'>
             Drop the image here or click to browse.

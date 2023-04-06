@@ -2,7 +2,13 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'dotted-border-color': '#C7CDD3',
+        'button-color': '#3D485F',
+        'title-color': '#495567',
+      },
+    },
   },
   plugins: [],
 }
