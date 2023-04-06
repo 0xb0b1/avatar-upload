@@ -1,12 +1,6 @@
 import AvatarEditor from 'react-avatar-editor'
 import { useImage } from '../../contexts/ImageContext'
 
-interface FileChangeType {
-  handleFileChange?: (event: any) => void
-  image?: string
-  imageZoom?: number
-}
-
 export const InputImage = () => {
   const { image, imageZoom, handleFileChange } = useImage()
 
