@@ -12,9 +12,10 @@ interface ImageContextType {
   imageState: ImageStateType
   imageRawData: string | null
   handleFileChange: (event: any) => void
-  setImageZoom: any
-  setImageState: any
-  setImageRawData: any
+  handleImageZoom: (event: any) => void
+  handleRemoveImage: () => void
+  handleImageState: (state: ImageStateType) => void
+  handleImageRawData: (ref: any) => void
 }
 
 export const ImageContext = createContext({} as ImageContextType)
@@ -29,11 +30,29 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
     try {
       const selectedImage = event.target.files[0]
 
-      setImageState('error')
+      setImageState('crop')
       setImage(URL.createObjectURL(selectedImage))
     } catch {
       setImageState('error')
     }
+  }
+
+  const handleImageState = (state: ImageStateType) => {
+    setImageState(state)
+  }
+
+  const handleRemoveImage = () => {
+    setImage('')
+  }
+
+  const handleImageZoom = (event: any) => {
+    setImageZoom(event)
+  }
+
+  const handleImageRawData = (ref: any) => {
+    if (ref.current) setImageRawData(ref.current.getImage().toDataURL())
+
+    return
   }
 
   return (
@@ -43,10 +62,11 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
         imageZoom,
         imageState,
         imageRawData,
-        setImageZoom,
-        setImageState,
-        setImageRawData,
+        handleImageZoom,
         handleFileChange,
+        handleImageState,
+        handleRemoveImage,
+        handleImageRawData,
       }}
     >
       {children}
