@@ -1,6 +1,9 @@
 import React from 'react'
+import { useImage } from '../../contexts/ImageContext'
 
 export const UploadError = () => {
+  const { handleImageState } = useImage()
+
   return (
     <div className='bg-gray-100 relative rounded-xl p-8 h-[177px]'>
       <div className='flex gap-8 items-center  center'>
@@ -27,14 +30,14 @@ export const UploadError = () => {
           </h2>
           <a
             className='underline font-medium cursor-pointer'
-            // onClick={() => setImageState('initial')}
+            // onClick={handle}
           >
             Try again
           </a>
 
           <button
             className='absolute right-4 top-6 cursor-pointer'
-            // onClick={() => setImageState('initial')}
+            onClick={() => handleImageState('initial')}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'

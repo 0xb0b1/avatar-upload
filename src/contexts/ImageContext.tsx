@@ -30,9 +30,14 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
     try {
       const selectedImage = event.target.files[0]
 
+      const imageTypeRegex = /^image\/(jpe?g|png|gif|bmp|svg\+xml)$/i
+
+      if (!imageTypeRegex.test(selectedImage.type)) throw 'Upload failed'
+
       setImageState('crop')
       setImage(URL.createObjectURL(selectedImage))
-    } catch {
+    } catch (e) {
+      console.log(e)
       setImageState('error')
     }
   }
