@@ -30,7 +30,7 @@ export const UploadError = () => {
           </h2>
           <a
             className='underline font-medium cursor-pointer'
-            // onClick={handle}
+            onClick={() => handleImageState('initial')}
           >
             Try again
           </a>
