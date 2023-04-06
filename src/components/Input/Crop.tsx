@@ -7,10 +7,12 @@ export const Crop = () => {
   const {
     image,
     imageZoom,
+    imagePosition,
     handleImageZoom,
     handleImageState,
     handleImageRawData,
     handleRemoveImage,
+    handleImagePosition,
   } = useImage()
 
   const editorRef = useRef(null)
@@ -33,6 +35,8 @@ export const Crop = () => {
             borderRadius={100}
             width={110}
             height={110}
+            position={imagePosition}
+            onPositionChange={handleImagePosition}
             onImageChange={() => {
               handleImageRawData(editorRef)
             }}

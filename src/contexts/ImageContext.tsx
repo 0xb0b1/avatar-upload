@@ -11,11 +11,13 @@ interface ImageContextType {
   imageZoom: number
   imageState: ImageStateType
   imageRawData: string | null
+  imagePosition: { x: number; y: number }
   handleFileChange: (event: any) => void
   handleImageZoom: (event: any) => void
   handleRemoveImage: () => void
   handleImageState: (state: ImageStateType) => void
   handleImageRawData: (ref: any) => void
+  handleImagePosition: (event: any) => void
 }
 
 export const ImageContext = createContext({} as ImageContextType)
@@ -25,6 +27,7 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
   const [imageZoom, setImageZoom] = useState(1)
   const [imageState, setImageState] = useState<ImageStateType>('initial')
   const [imageRawData, setImageRawData] = useState(null)
+  const [imagePosition, setImagePosition] = useState({ x: 0.5, y: 0.5 })
 
   const handleFileChange = (event: any) => {
     try {
@@ -60,6 +63,10 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
     return
   }
 
+  const handleImagePosition = (event: any) => {
+    setImagePosition(event)
+  }
+
   return (
     <ImageContext.Provider
       value={{
@@ -67,11 +74,13 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
         imageZoom,
         imageState,
         imageRawData,
+        imagePosition,
         handleImageZoom,
         handleFileChange,
         handleImageState,
         handleRemoveImage,
         handleImageRawData,
+        handleImagePosition,
       }}
     >
       {children}

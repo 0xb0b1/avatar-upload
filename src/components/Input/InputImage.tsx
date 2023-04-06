@@ -2,7 +2,7 @@ import AvatarEditor from 'react-avatar-editor'
 import { useImage } from '../../contexts/ImageContext'
 
 export const InputImage = () => {
-  const { image, imageZoom, handleFileChange } = useImage()
+  const { image, imageZoom, imagePosition, handleFileChange } = useImage()
 
   const justifyWithImage = !image ? 'justify-center' : ''
 
@@ -26,6 +26,7 @@ export const InputImage = () => {
               color={[241, 245, 249, 1]}
               image={image}
               scale={imageZoom}
+              position={imagePosition}
               borderRadius={100}
               width={110}
               height={110}
