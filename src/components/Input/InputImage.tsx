@@ -7,9 +7,10 @@ export const InputImage = () => {
   const justifyWithImage = !image ? 'justify-center' : ''
 
   return (
-    <div className='bg-gray-100 relative border-2 border-dashed border-dotted-border-color rounded-md p-8 py-4 h-[177px]'>
+    <div className='bg-box-background-color relative border-2 border-dashed border-dotted-border-color rounded-md p-8 py-4 h-[177px]'>
       <input
         type='file'
+        aria-label='file input'
         data-testid='upload-avatar'
         className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
         draggable='true'
@@ -53,7 +54,7 @@ export const InputImage = () => {
 
             <p className='text-title-color font-medium'>Organization Logo</p>
           </div>
-          <p className='mt-1 text-md text-gray-500'>
+          <p className='mt-1 text-md text-gray-800'>
             Drop the image here or click to browse.
           </p>
         </div>

@@ -4,7 +4,7 @@ export const UploadError = () => {
   const { handleImageState } = useImage()
 
   return (
-    <div className='bg-gray-100 relative rounded-xl p-8 h-[177px]'>
+    <div className='bg-box-background-color relative rounded-xl p-8 h-[177px]'>
       <div className='flex gap-8 items-center  center'>
         <div className='z-50 h-28 w-28 rounded-full flex items-center justify-center bg-gray-300'>
           <svg
