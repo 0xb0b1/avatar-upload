@@ -11,16 +11,11 @@ export const Crop = () => {
     handleImageZoom,
     handleImageState,
     handleImageRawData,
-    handleRemoveImage,
     handleImagePosition,
+    handleCancelEdit,
   } = useImage()
 
   const editorRef = useRef(null)
-
-  const handleCloseCrop = () => {
-    handleRemoveImage()
-    handleImageState('initial')
-  }
 
   return (
     <div className='bg-box-background-color relative rounded-xl p-8 h-[177px]'>
@@ -29,8 +24,9 @@ export const Crop = () => {
           <AvatarEditor
             ref={editorRef}
             className='bg-white'
+            data-testid='uploaded-avatar'
             color={[241, 245, 249, 1]}
-            image={image}
+            image={image || ''}
             scale={imageZoom}
             borderRadius={100}
             width={110}
@@ -49,12 +45,14 @@ export const Crop = () => {
             min={0}
             max={10}
             step={0.2}
+            data-testid='zoom-slider'
             defaultValue={imageZoom}
             value={imageZoom}
             onChange={handleImageZoom}
           />
           <button
             className='self-end rounded-2xl bg-gray-800 mt-4 py-2 px-8 text-gray-100 cursor-pointer'
+            data-testid='save-image-btn'
             onClick={() => handleImageState('initial')}
           >
             Save
@@ -62,7 +60,8 @@ export const Crop = () => {
 
           <button
             className='absolute right-4 top-6 cursor-pointer'
-            onClick={handleCloseCrop}
+            data-testid='close-image-edit'
+            onClick={handleCancelEdit}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
