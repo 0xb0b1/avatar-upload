@@ -10,6 +10,7 @@ export const InputImage = () => {
     <div className='bg-box-background-color relative border-2 border-dashed border-dotted-border-color rounded-md p-8 py-4 h-[177px]'>
       <input
         type='file'
+        name='upload-avatar'
         aria-label='file input'
         data-testid='upload-avatar'
         className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
@@ -21,9 +22,13 @@ export const InputImage = () => {
         className={`flex gap-8 items-center ${justifyWithImage} text-center h-32`}
       >
         {image ? (
-          <div className='h-28 w-28 rounded-full bg-red-500 flex items-center justify-center'>
+          <div
+            data-testid='avatar'
+            className='h-28 w-28 rounded-full bg-red-500 flex items-center justify-center'
+          >
             <AvatarEditor
               className='bg-white'
+              data-testid='uploaded-avatar'
               color={[241, 245, 249, 1]}
               image={image}
               scale={imageZoom}
@@ -31,7 +36,7 @@ export const InputImage = () => {
               borderRadius={100}
               width={110}
               height={110}
-            />{' '}
+            />
           </div>
         ) : null}
 
