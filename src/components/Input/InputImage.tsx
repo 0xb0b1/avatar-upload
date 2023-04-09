@@ -12,7 +12,7 @@ export const InputImage = () => {
         type='file'
         name='upload-avatar'
         aria-label='file input'
-        data-testid='upload-avatar'
+        data-testid='upload-avatar-input'
         className='absolute inset-0 w-full h-full opacity-0 cursor-pointer'
         draggable='true'
         accept='image/*'
