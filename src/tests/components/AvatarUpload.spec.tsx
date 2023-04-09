@@ -26,11 +26,6 @@ describe('Avatar Upload', () => {
     const imageState = 'initial'
 
     avatarUploadContextWrapper({ imageState })
-    // render(
-    //   <ImageContext.Provider value={{ imageState }}>
-    //     <AvatarUpload />
-    //   </ImageContext.Provider>,
-    // )
 
     expect(screen.getByTestId('upload-avatar-input')).toHaveAttribute(
       'type',
