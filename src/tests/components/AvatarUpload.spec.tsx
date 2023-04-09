@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import { render, screen, fireEvent, cleanup } from '@testing-library/react'
-import { AvatarUpload } from '../../components/Input/AvatarUpload'
 import { ImageContext } from '../../contexts/ImageContext'
+import { AvatarUpload } from '../../components/AvatarUpload'
 
 describe('Avatar Upload', () => {
   const avatarUploadContextWrapper = ({ ...providerProps }) => {
