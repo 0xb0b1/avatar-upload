@@ -10,6 +10,8 @@ describe('Avatar Upload', () => {
 
   it('should render properly', () => {
     render(<AvatarUpload />)
+
+    expect(screen.getByTestId('avatar-upload-container'))
   })
 
   it('should have an input of type=file', () => {

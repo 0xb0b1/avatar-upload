@@ -12,12 +12,12 @@ interface ImageContextType {
   imageState: ImageStateType
   imageRawData: string | null
   imagePosition: { x: number; y: number }
-  handleFileChange: (event: any) => void
+  handleCancelEdit: () => void
   handleImageZoom: (event: any) => void
+  handleFileChange: (event: any) => void
   handleImageState: (state: ImageStateType) => void
   handleImageRawData: (ref: any) => void
   handleImagePosition: (event: any) => void
-  handleCancelEdit: () => void
 }
 
 export const ImageContext = createContext({} as ImageContextType)
@@ -31,7 +31,7 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
 
   const handleFileChange = (event: any) => {
     try {
-      const selectedImage: any = event.target.files[0]
+      const selectedImage = event.target.files[0]
 
       const imageTypeRegex = /^image\/(jpe?g|gif|png|bmp|svg\+xml)$/i
 
