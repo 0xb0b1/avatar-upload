@@ -1,4 +1,4 @@
-import { AvatarUpload } from './components/Input/AvatarUpload'
+import { AvatarUpload } from './components/AvatarUpload'
 import { ImageProvider } from './contexts/ImageContext'
 
 function App() {
