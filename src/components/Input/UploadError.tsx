@@ -1,10 +1,13 @@
 import { useImage } from '../../contexts/ImageContext'
 
 export const UploadError = () => {
-  const { handleImageState } = useImage()
+  const { handleCancelEdit } = useImage()
 
   return (
-    <div className='bg-box-background-color relative rounded-xl p-8 h-[177px]'>
+    <div
+      data-testid='upload-error'
+      className='bg-box-background-color relative rounded-xl p-8 h-[177px]'
+    >
       <div className='flex gap-8 items-center  center'>
         <div className='z-50 h-28 w-28 rounded-full flex items-center justify-center bg-gray-300'>
           <svg
@@ -27,16 +30,20 @@ export const UploadError = () => {
           <h2 className='font-light text-orange-700'>
             Sorry, the upload failed.
           </h2>
-          <a
-            className='underline font-medium cursor-pointer'
-            onClick={() => handleImageState('initial')}
+          <button
+            data-testid='restart-upload'
+            className='self-start'
+            onClick={handleCancelEdit}
           >
-            Try again
-          </a>
+            <span className='underline font-medium cursor-pointer'>
+              Try again
+            </span>
+          </button>
 
           <button
             className='absolute right-4 top-6 cursor-pointer'
-            onClick={() => handleImageState('initial')}
+            data-testid='close-edit-avatar'
+            onClick={handleCancelEdit}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'

@@ -4,20 +4,20 @@ interface ImageContextProviderProps {
   children: ReactNode
 }
 
-type ImageStateType = 'initial' | 'crop' | 'error'
+type ImageStateType = 'initial' | 'edit' | 'error'
 
 interface ImageContextType {
-  image: string
+  image: string | undefined
   imageZoom: number
   imageState: ImageStateType
   imageRawData: string | null
   imagePosition: { x: number; y: number }
   handleFileChange: (event: any) => void
   handleImageZoom: (event: any) => void
-  handleRemoveImage: () => void
   handleImageState: (state: ImageStateType) => void
   handleImageRawData: (ref: any) => void
   handleImagePosition: (event: any) => void
+  handleCancelEdit: () => void
 }
 
 export const ImageContext = createContext({} as ImageContextType)
@@ -31,16 +31,17 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
 
   const handleFileChange = (event: any) => {
     try {
-      const selectedImage = event.target.files[0]
+      const selectedImage: any = event.target.files[0]
 
-      const imageTypeRegex = /^image\/(jpe?g|png|gif|bmp|svg\+xml)$/i
+      const imageTypeRegex = /^image\/(jpe?g|gif|png|bmp|svg\+xml)$/i
 
-      if (!imageTypeRegex.test(selectedImage.type)) throw 'Upload failed'
+      if (!imageTypeRegex.test(selectedImage.type))
+        throw 'File should be an image'
 
-      setImageState('crop')
+      setImageState('edit')
       setImage(URL.createObjectURL(selectedImage))
     } catch (e) {
-      console.log(e)
+      console.error(e)
       setImageState('error')
     }
   }
@@ -49,8 +50,9 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
     setImageState(state)
   }
 
-  const handleRemoveImage = () => {
+  const handleCancelEdit = () => {
     setImage('')
+    setImageState('initial')
   }
 
   const handleImageZoom = (event: any) => {
@@ -58,9 +60,9 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
   }
 
   const handleImageRawData = (ref: any) => {
-    if (ref.current) setImageRawData(ref.current.getImage().toDataURL())
+    if (!ref.current) return
 
-    return
+    setImageRawData(ref.current.getImage().toDataURL())
   }
 
   const handleImagePosition = (event: any) => {
@@ -78,9 +80,9 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
         handleImageZoom,
         handleFileChange,
         handleImageState,
-        handleRemoveImage,
         handleImageRawData,
         handleImagePosition,
+        handleCancelEdit,
       }}
     >
       {children}

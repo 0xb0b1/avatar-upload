@@ -1,4 +1,4 @@
-import { Crop } from './Crop'
+import { EditAvatar } from './EditAvatar'
 import { InputImage } from './InputImage'
 import { UploadError } from './UploadError'
 
@@ -11,12 +11,15 @@ export const AvatarUpload = () => {
 
   const ImageStateComponents: any = {
     initial: <InputImage />,
-    crop: <Crop />,
+    edit: <EditAvatar />,
     error: <UploadError />,
   }
 
   return (
-    <div className='max-w-screen-md m-auto'>
+    <div
+      className='max-w-screen-md m-auto'
+      data-testid='avatar-upload-container'
+    >
       <div className='rounded-xl m-24 flex flex-col gap-4'>
         {ImageStateComponents[imageState]}
       </div>

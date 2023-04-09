@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import AvatarEditor from 'react-avatar-editor'
 import { useImage } from '../../contexts/ImageContext'
 
-export const Crop = () => {
+export const EditAvatar = () => {
   const {
     image,
     imageZoom,
@@ -24,7 +24,7 @@ export const Crop = () => {
           <AvatarEditor
             ref={editorRef}
             className='bg-white'
-            data-testid='uploaded-avatar'
+            data-testid='canvas'
             color={[241, 245, 249, 1]}
             image={image || ''}
             scale={imageZoom}
@@ -51,7 +51,7 @@ export const Crop = () => {
             onChange={handleImageZoom}
           />
           <button
-            className='self-end rounded-2xl bg-gray-800 mt-4 py-2 px-8 text-gray-100 cursor-pointer'
+            className='self-end rounded-2xl mt-4 py-2 px-12 bg-button-color text-gray-100 cursor-pointer'
             data-testid='save-image-btn'
             onClick={() => handleImageState('initial')}
           >
@@ -60,7 +60,7 @@ export const Crop = () => {
 
           <button
             className='absolute right-4 top-6 cursor-pointer'
-            data-testid='close-image-edit'
+            data-testid='close-avatar-edit'
             onClick={handleCancelEdit}
           >
             <svg

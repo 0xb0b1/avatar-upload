@@ -1,8 +1,0 @@
-{
-  "testPathIgnorePatterns": ["/node_modules/"],
-  "setupFilesAfterEnv": ["<rootDir>/src/testes/setupTests.ts"],
-  "transform": {
-    "^.+\\.tsx?$": "ts-jest"
-  },
-  "testEnvironment": "jsdom"
-}
