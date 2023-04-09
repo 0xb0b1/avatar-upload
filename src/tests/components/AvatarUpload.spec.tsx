@@ -6,7 +6,7 @@ import { ImageContext } from '../../contexts/ImageContext'
 describe('Avatar Upload', () => {
   const avatarUploadContextWrapper = ({ ...providerProps }) => {
     return render(
-      <ImageContext.Provider value={{ ...providerProps }}>
+      <ImageContext.Provider value={providerProps}>
         <AvatarUpload />
       </ImageContext.Provider>,
     )
@@ -46,6 +46,7 @@ describe('Avatar Upload', () => {
   it('should be able to select an image from input', () => {
     const imageState = 'initial'
     const handleFileChange = vi.fn()
+
     const file = new File(['image'], 'image.png', { type: 'image/png' })
 
     avatarUploadContextWrapper({ imageState, handleFileChange })
