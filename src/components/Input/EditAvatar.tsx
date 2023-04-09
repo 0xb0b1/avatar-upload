@@ -40,7 +40,7 @@ export const EditAvatar = () => {
         </div>
 
         <div className='flex flex-col w-3/6'>
-          <h2 className='font-light text-gray-500'>Crop</h2>
+          <h2 className='font-light mb-2 text-gray-500'>Crop</h2>
           <Slider
             min={0}
             max={10}
@@ -51,7 +51,7 @@ export const EditAvatar = () => {
             onChange={handleImageZoom}
           />
           <button
-            className='self-end rounded-2xl mt-4 py-2 px-12 bg-button-color text-gray-100 cursor-pointer'
+            className='self-end rounded-2xl mt-4 py-2 px-12 bg-button-color text-gray-100 cursor-pointer hover:opacity-95'
             data-testid='save-image-btn'
             onClick={() => handleImageState('initial')}
           >
@@ -59,7 +59,7 @@ export const EditAvatar = () => {
           </button>
 
           <button
-            className='absolute right-4 top-6 cursor-pointer'
+            className='absolute right-4 top-6 cursor-pointer hover:scale-95'
             data-testid='close-avatar-edit'
             onClick={handleCancelEdit}
           >
