@@ -8,12 +8,9 @@
 
 ## 💻 Oque tem no projeto?
 
-* Uso do sistema estático do Next.js, onde os posts são mantidos no cache para um melhor carregamento.
-* Dados são salvos no bando do FaunDb.
-* Sistema de verificação de assinatura, o conteúdo exibido varia entre usuários com/sem assinatura paga.
-* Integração com o Prismic CMS, para trabalhar com toda a parte do sistema do blog.
-* Integração com o Stripe para a parte dos pagamentos das inscrições.
-* Integração com o NextAuth para a parte do login com o Github.
+* Adicionar avatar clicando no input ou arrastando a imagem.
+* Editar avatar utiliazando o slider para dar zoom.
+* Salvar o avatar editado.
 
 ## 🛠️ Tecnologias/Ferramentas ultilizadas
 
