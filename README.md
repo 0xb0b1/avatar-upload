@@ -16,6 +16,7 @@
 
 * [React.js](https://beta.reactjs.org)
 * [Typescript](https://www.typescriptlang.org/)
+*     teste
 * [Vite](https://vitejs.dev/)
 * [Vitest](https://vitest.dev/)
 * [TailwindCSS](https://tailwindcss.com/)
