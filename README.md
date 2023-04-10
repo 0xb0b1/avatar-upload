@@ -4,12 +4,11 @@
 
 * Teste frontend para avaliar minhas skills tecnicas com ReactJS, Typescript.
 
-&nbsp;
 
-## 💻 Oque tem no projeto?
+## 💻 Funcionalidades
 
 * Adicionar avatar clicando no input ou arrastando a imagem.
-* Editar avatar utiliazando o slider para dar zoom.
+* Editar avatar utilizando o slider para dar zoom.
 * Salvar o avatar editado.
 
 ## 🛠️ Tecnologias/Ferramentas ultilizadas
