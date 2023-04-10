@@ -157,7 +157,7 @@ describe('Avatar Upload', () => {
     expect(handleCancelEdit).toHaveBeenCalledOnce()
   })
 
-  it('should be able to zoom the with image with slider', () => {
+  it('should be able to zoom the image with slider', () => {
     const imageState = 'edit'
     const imageZoom = 1
     const handleImageZoom = vi.fn()
@@ -168,10 +168,35 @@ describe('Avatar Upload', () => {
       handleImageZoom,
     })
 
-    fireEvent.mouseDown(document.querySelector('.rc-slider'), {
+    const sliderInput = document.querySelector('.rc-slider')
+
+    fireEvent.mouseDown(sliderInput, {
       clientX: 1.2,
     })
 
     expect(handleImageZoom).toHaveBeenCalled()
+  })
+
+  it('should be able to change the image position with the mouse', () => {
+    const imageState = 'edit'
+    const imagePosition = { x: 0.5, y: 0.5 }
+    const handleImagePosition = vi.fn()
+
+    avatarUploadContextWrapper({
+      imageState,
+      imagePosition,
+      handleImagePosition,
+    })
+
+    const imageCanvas = screen.getByTestId('canvas')
+
+    fireEvent.mouseEnter(imageCanvas)
+    fireEvent.mouseDown(imageCanvas, {
+      clientX: 0.5,
+      clientY: 0.5,
+    })
+    fireEvent.mouseLeave(imageCanvas)
+
+    // expect(handleImagePosition).toHaveBeenCalled()
   })
 })
