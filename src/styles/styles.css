@@ -17,6 +17,11 @@ body {
   background-color: #3f80ff;
 }
 
+.rc-slider-handle-dragging {
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
 .rc-slider-handle {
   background-color: #3f80ff;
   opacity: 1 !important;
