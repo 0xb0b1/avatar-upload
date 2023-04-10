@@ -156,4 +156,22 @@ describe('Avatar Upload', () => {
     fireEvent.click(tryAgainButton)
     expect(handleCancelEdit).toHaveBeenCalledOnce()
   })
+
+  it('should be able to zoom the with image with slider', () => {
+    const imageState = 'edit'
+    const imageZoom = 1
+    const handleImageZoom = vi.fn()
+
+    avatarUploadContextWrapper({
+      imageState,
+      imageZoom,
+      handleImageZoom,
+    })
+
+    fireEvent.mouseDown(document.querySelector('.rc-slider'), {
+      clientX: 1.2,
+    })
+
+    expect(handleImageZoom).toHaveBeenCalled()
+  })
 })
