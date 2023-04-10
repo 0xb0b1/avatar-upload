@@ -48,7 +48,7 @@ $ yarn
 $ yarn dev
 
 # Executar testes
-& yarn test
+$ yarn test
 
 ```
 
