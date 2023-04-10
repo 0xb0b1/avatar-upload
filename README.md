@@ -19,6 +19,7 @@
 * [Vite](https://vitejs.dev/)
 * [Vitest](https://vitest.dev/)
 * [TailwindCSS](https://tailwindcss.com/)
+  
   ***Não é a stack que usam na croct, mas usar tailwind é uma forma que consigo configurar rápido e desenvolver o css, sem precisar organizar arquivos separados.
 
 
