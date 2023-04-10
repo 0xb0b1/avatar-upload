@@ -3,11 +3,11 @@ import { ImageProvider } from './contexts/ImageContext'
 
 function App() {
   return (
-    <ImageProvider>
-      <div className='m-auto mt-12 mb-12 pt-4 pb-4  rounded-xl'>
+    <div className='m-auto mt-12 mb-12 pt-4 pb-4  rounded-xl'>
+      <ImageProvider>
         <AvatarUpload />
-      </div>
-    </ImageProvider>
+      </ImageProvider>
+    </div>
   )
 }
 

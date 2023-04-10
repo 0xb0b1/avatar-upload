@@ -12,3 +12,13 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #ffffff;
 }
+
+.rc-slider-track {
+  background-color: #3f80ff;
+}
+
+.rc-slider-handle {
+  background-color: #3f80ff;
+  opacity: 1 !important;
+  border: none;
+}
