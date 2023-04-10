@@ -25,7 +25,7 @@
   
 * [TailwindCSS](https://tailwindcss.com/)
   
-  ***Não é a stack que usam na croct, mas decidi usar aqui pois é uma forma que consigo configurar rápido e desenvolver o css, sem precisar organizar arquivos separados.***
+  ***Não é a stack que usam na croct, mas decidi usar aqui pois é uma forma que consigo configurar rápido e desenvolver o css, e posso ir estilizando meu component conforme vou criando***
 
 
 
