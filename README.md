@@ -13,7 +13,7 @@
 
 ## 🛠️ Tecnologias/Ferramentas ultilizadas
 
-* [React.js](https://beta.reactjs.org)
+* [React.js](https://react.dev/)
 * [Typescript](https://www.typescriptlang.org/)
 * [Vite](https://vitejs.dev/)
 
