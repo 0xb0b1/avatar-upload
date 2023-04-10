@@ -18,7 +18,7 @@
 * [Typescript](https://www.typescriptlang.org/)
 * [Vite](https://vitejs.dev/)
 
-  ***Vite é uma alternativa muito interessante ao CRA, e que está sendo muito usada no mercado.***
+  ***Vite é uma alternativa muito interessante ao CRA, e que está sendo muito utilizada no mercado.***
 * [Vitest](https://vitest.dev/)
 
   ***Como estou utilizando Vite pra criar o projeto React, é recomendado utilizar o vitest para os testes unitarios,***
