@@ -16,7 +16,8 @@
 
 * [React.js](https://beta.reactjs.org)
 * [Typescript](https://www.typescriptlang.org/)
-     #### teste
+     #### Por que usei tailwindcss?
+          Não é a stack que usam na croct, mas usar tailwind é uma forma que consigo configurar rápido e desenvolver o css, sem precisar organizar arquivos separados.
 * [Vite](https://vitejs.dev/)
 * [Vitest](https://vitest.dev/)
 * [TailwindCSS](https://tailwindcss.com/)
