@@ -17,10 +17,15 @@
 * [React.js](https://beta.reactjs.org)
 * [Typescript](https://www.typescriptlang.org/)
 * [Vite](https://vitejs.dev/)
+
+  ***Vite é uma alternativa muito interessante ao CRA, e que está sendo muito usada no mercado.***
 * [Vitest](https://vitest.dev/)
+
+  ***Como estou utilizando Vite pra criar o projeto React, é recomendado utilizar o vitest para os testes unitarios,***
+  
 * [TailwindCSS](https://tailwindcss.com/)
   
-  ***Não é a stack que usam na croct, mas usar tailwind é uma forma que consigo configurar rápido e desenvolver o css, sem precisar organizar arquivos separados.***
+  ***Não é a stack que usam na croct, mas decidi usar aqui pois é uma forma que consigo configurar rápido e desenvolver o css, sem precisar organizar arquivos separados.***
 
 
 
