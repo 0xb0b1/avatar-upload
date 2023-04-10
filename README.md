@@ -33,7 +33,7 @@
 ## ⚙️ Instalação
 ```
 # Faça clone do projeto utilizando a CLI 
-$ git clone https://github.com/0xb0b1/image-upload.git
+$ git clone https://github.com/0xb0b1/avatar-upload.git
 ```
 
 ```
