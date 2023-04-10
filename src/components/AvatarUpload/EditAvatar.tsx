@@ -21,22 +21,24 @@ export const EditAvatar = () => {
     <div className='bg-box-background-color relative rounded-xl p-8 h-[177px]'>
       <div className='flex gap-8 items-center  center'>
         <div className='z-50 h-28 w-28 rounded-full flex items-center justify-center bg-white'>
-          <AvatarEditor
-            ref={editorRef}
-            className='bg-white'
-            data-testid='canvas'
-            color={[241, 245, 249, 1]}
-            image={image || ''}
-            scale={imageZoom}
-            borderRadius={100}
-            width={110}
-            height={110}
-            position={imagePosition}
-            onPositionChange={handleImagePosition}
-            onImageChange={() => {
-              handleImageRawData(editorRef)
-            }}
-          />
+          {image ? (
+            <AvatarEditor
+              ref={editorRef}
+              className='bg-white'
+              data-testid='canvas'
+              color={[241, 245, 249, 1]}
+              image={image || ''}
+              scale={imageZoom}
+              borderRadius={100}
+              width={110}
+              height={110}
+              position={imagePosition}
+              onPositionChange={handleImagePosition}
+              onImageChange={() => {
+                handleImageRawData(editorRef)
+              }}
+            />
+          ) : null}
         </div>
 
         <div className='flex flex-col w-3/6'>
