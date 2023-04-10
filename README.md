@@ -39,7 +39,7 @@ $ git clone https://github.com/0xb0b1/image-upload.git
 
 ```
 # Acesse a pasta da aplicação
-$ cd cd image-upload
+$ cd image-upload
 
 # Instalando as dependências
 $ yarn
