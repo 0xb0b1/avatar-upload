@@ -38,7 +38,7 @@ $ git clone https://github.com/0xb0b1/avatar-upload.git
 
 ```
 # Acesse a pasta da aplicação
-$ cd image-upload
+$ cd avatar-upload
 
 # Instalando as dependências
 $ yarn
