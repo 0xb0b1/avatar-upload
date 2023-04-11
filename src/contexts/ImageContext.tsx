@@ -1,4 +1,11 @@
-import { ReactNode, createContext, useContext, useState } from 'react'
+import {
+  ReactNode,
+  RefAttributes,
+  RefObject,
+  createContext,
+  useContext,
+  useState,
+} from 'react'
 
 interface ImageContextProviderProps {
   children: ReactNode
@@ -59,7 +66,7 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
     setImageZoom(event)
   }
 
-  const handleImageRawData = (ref: any) => {
+  const handleImageRawData = (ref: RefObject<any>) => {
     if (!ref.current) return
 
     setImageRawData(ref.current.getImage().toDataURL())
