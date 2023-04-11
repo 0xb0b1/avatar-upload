@@ -18,9 +18,9 @@ export const EditAvatar = () => {
   const editorRef = useRef(null)
 
   return (
-    <div className='bg-box-background-color relative rounded-xl p-8 h-[177px]'>
-      <div className='flex gap-8 items-center  center'>
-        <div className='z-50 h-28 w-28 rounded-full flex items-center justify-center bg-white'>
+    <div className='bg-box-background-color relative rounded-xl p-8'>
+      <div className='flex flex-col gap-8 items-center justify-center md:flex-row'>
+        <div className='h-28 w-28 rounded-full flex items-center justify-center bg-white'>
           {image ? (
             <AvatarEditor
               ref={editorRef}
@@ -41,7 +41,7 @@ export const EditAvatar = () => {
           ) : null}
         </div>
 
-        <div className='flex flex-col w-3/6'>
+        <div className='w-3/6 flex flex-col'>
           <h2 className='font-light mb-2 text-gray-500'>Crop</h2>
           <Slider
             min={0}
@@ -53,7 +53,7 @@ export const EditAvatar = () => {
             onChange={handleImageZoom}
           />
           <button
-            className='self-end rounded-2xl mt-4 py-2 px-12 bg-button-color text-gray-100 cursor-pointer hover:opacity-95'
+            className='self-center rounded-2xl mt-4 py-2 px-12 bg-button-color text-gray-100 cursor-pointer hover:opacity-95 md:self-end'
             data-testid='save-image-btn'
             onClick={() => handleImageState('initial')}
           >

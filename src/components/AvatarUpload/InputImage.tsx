@@ -5,9 +5,12 @@ export const InputImage = () => {
   const { image, imageZoom, imagePosition, handleFileChange } = useImage()
 
   const justifyWithImage = !image ? 'justify-center' : ''
+  const heightWithImage = image ? 'h-[300px]' : 'h-auto'
 
   return (
-    <div className='bg-box-background-color relative border-2 border-dashed border-dotted-border-color rounded-md p-8 py-4 h-[177px]'>
+    <div
+      className={`${heightWithImage} bg-box-background-color relative border-2 border-dashed border-dotted-border-color rounded-md p-8 py-4 md:h-[177px]`}
+    >
       <input
         type='file'
         name='upload-avatar'
@@ -19,12 +22,12 @@ export const InputImage = () => {
         onChange={handleFileChange}
       />
       <div
-        className={`flex gap-8 items-center ${justifyWithImage} text-center h-32`}
+        className={`flex flex-col gap-8 items-center ${justifyWithImage} text-center h-32 md:flex-row`}
       >
         {image ? (
           <div
             data-testid='avatar'
-            className='h-28 w-28 rounded-full flex items-center justify-center'
+            className='rounded-full flex items-center justify-center md:h-28 w-28'
           >
             <AvatarEditor
               className='bg-white'

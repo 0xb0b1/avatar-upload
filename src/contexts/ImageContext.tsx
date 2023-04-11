@@ -1,6 +1,5 @@
 import {
   ReactNode,
-  RefAttributes,
   RefObject,
   createContext,
   useContext,

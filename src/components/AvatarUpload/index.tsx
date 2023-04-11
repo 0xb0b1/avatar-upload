@@ -16,11 +16,8 @@ export const AvatarUpload = () => {
   }
 
   return (
-    <div
-      className='max-w-screen-md m-auto'
-      data-testid='avatar-upload-container'
-    >
-      <div className='rounded-xl m-24 flex flex-col gap-4'>
+    <div className='max-w-[580px] m-auto' data-testid='avatar-upload-container'>
+      <div className='rounded-xl mt-24 mx-4 flex flex-col gap-4'>
         {ImageStateComponents[imageState]}
       </div>
     </div>
