@@ -31,12 +31,12 @@ export const ImageProvider = ({ children }: ImageContextProviderProps) => {
 
   const handleFileChange = (event: any) => {
     try {
-      const selectedImage = event.target.files[0]
+      const selectedImage = event.target.files[0] as Blob
 
       const imageTypeRegex = /^image\/(jpe?g|gif|png|bmp|svg\+xml)$/i
 
       if (!imageTypeRegex.test(selectedImage.type))
-        throw 'File should be an image'
+        throw new Error(`Unsupported image type: ${selectedImage.type}`)
 
       setImageState('edit')
       setImage(URL.createObjectURL(selectedImage))
