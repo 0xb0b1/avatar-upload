@@ -24,7 +24,7 @@ export const InputImage = () => {
         {image ? (
           <div
             data-testid='avatar'
-            className='h-28 w-28 rounded-full bg-red-500 flex items-center justify-center'
+            className='h-28 w-28 rounded-full flex items-center justify-center'
           >
             <AvatarEditor
               className='bg-white'
