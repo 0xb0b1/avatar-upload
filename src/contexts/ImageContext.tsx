@@ -23,7 +23,7 @@ interface ImageContextType {
   handleImageZoom: (event: any) => void
   handleFileChange: (event: any) => void
   handleImageState: (state: ImageStateType) => void
-  handleImageRawData: (ref: any) => void
+  handleImageRawData: (ref: RefObject<any>) => void
   handleImagePosition: (event: any) => void
 }
 
